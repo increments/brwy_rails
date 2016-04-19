@@ -7,6 +7,7 @@ module WatchifyRails
     config.watchify_rails.tmpdir = "tmp/watchify_rails"
     config.watchify_rails.targets = []
     config.watchify_rails.verbose = true
+    config.watchify_rails.watch = Rails.env.development?
 
     initializer :assets do |config|
       # TODO: Hard code now. Fix it.
@@ -16,12 +17,7 @@ module WatchifyRails
 
     config.after_initialize do
       runner = Runner.new config.watchify_rails
-      pids = config.watchify_rails.targets.map {|target|
-        runner.run_with_watchify(target)
-      }
-      at_exit do
-        pids.each {|pid| Process.exit(pid)}
-      end
+      runner.run
     end
   end
 end

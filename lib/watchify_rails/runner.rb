@@ -6,6 +6,26 @@ module WatchifyRails
       @config = config
     end
 
+    def run
+      if watching?
+        pids = @config.targets.map {|target|
+          run_with_watchify(target)
+        }
+        at_exit do
+          pids.each {|pid| Process.exit(pid)}
+        end
+      else
+        @config.targets.map {|target|
+          run_with_browserify(target)
+        }
+      end
+    end
+
+    private
+    def watching?
+      @config.watch
+    end
+
     def run_with_watchify(target)
       ensure_output_dir!
       spawn watchify_cmd(target), chdir: Rails.root
@@ -16,7 +36,6 @@ module WatchifyRails
       spawn browserify_cmd(target), chdir: Rails.root
     end
 
-    private
     def browserify_cmd(target)
       "browserify #{cmd target}"
     end
