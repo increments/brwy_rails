@@ -4,15 +4,14 @@ module WatchifyRails
     config.watchify_rails = ActiveSupport::OrderedOptions.new
     config.watchify_rails.browserify_opts = "-t babelify"
     # TODO: Don't change tmpdir because it can't affect to asset.paths
-    config.watchify_rails.tmpdir = "tmp/watchify_rails"
+    config.watchify_rails.tmpdir = "tmp/cache/watchify_rails"
     config.watchify_rails.targets = []
     config.watchify_rails.verbose = true
+    config.watchify_rails.target_suffix = ".bundle.js"
     config.watchify_rails.watch = Rails.env.development?
 
     initializer :assets do |config|
-      # TODO: Hard code now. Fix it.
-      # Rails.application.config.assets.paths.unshift(Rails.root.join(config.watchify_rails.tmpdir))
-      Rails.application.config.assets.paths.unshift(Rails.root.join("tmp/watchify_rails"))
+      Rails.application.config.assets.paths << Rails.root.join("tmp/cache/watchify_rails")
     end
 
     config.after_initialize do

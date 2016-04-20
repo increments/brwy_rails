@@ -33,7 +33,7 @@ module WatchifyRails
 
     def run_with_browserify(target)
       ensure_output_dir!
-      spawn browserify_cmd(target), chdir: Rails.root
+      exec browserify_cmd(target), chdir: Rails.root
     end
 
     def browserify_cmd(target)
@@ -55,7 +55,8 @@ module WatchifyRails
     def output_path(target)
       # TODO: Consider nested dir
       # Use relative path later
-      output_dir.join(File.basename target)
+      fpath = output_dir.join(File.basename target)
+      fpath.sub File.extname(fpath), @config.target_suffix
     end
 
     def src_path(target)
