@@ -6,7 +6,7 @@ module BrwyRails
     config.brwy_rails.tmpdir = "tmp/cache/brwy_rails"
     config.brwy_rails.targets = []
     config.brwy_rails.verbose = true
-    config.brwy_rails.target_suffix = ".bundle.js"
+    config.brwy_rails.target_suffix = ".bundle"
     config.brwy_rails.watch = Rails.env.development?
 
     initializer :assets do

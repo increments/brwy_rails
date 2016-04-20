@@ -56,7 +56,7 @@ module BrwyRails
       # TODO: Consider nested dir
       # Use relative path later
       fpath = output_dir.join(File.basename target)
-      fpath.sub File.extname(fpath), @config.target_suffix
+      fpath.sub File.extname(fpath), (@config.target_suffix + ".js")
     end
 
     def src_path(target)

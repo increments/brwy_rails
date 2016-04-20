@@ -6,3 +6,5 @@ namespace :brwy_rails do
     runner.run
   end
 end
+
+task 'assets:precompile' => ['brwy_rails:build']

@@ -20,7 +20,7 @@ config.brwy_rails.targets = [
 Rails.application.config.middleware.use BrwyRails.Middleware
 # config.brwy_rails.browserify_opts = "-t babelify" # your browserify compile command
 # config.brwy_rails.verbose = true
-# config.brwy_rails.target_suffix = ".bundle.js"
+# config.brwy_rails.target_suffix = ".bundle"
 # config.brwy_rails.watch = Rails.env.development?
 ```
 
