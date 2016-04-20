@@ -37,11 +37,11 @@ module BrwyRails
     end
 
     def browserify_cmd(target)
-      "browserify #{cmd target}"
+      "node_modules/.bin/browserify #{cmd target}"
     end
 
     def watchify_cmd(target)
-      "watchify #{cmd target} #{verbose? ? "-v" : ""}"
+      "node_modules/.bin/watchify #{cmd target} #{verbose? ? "-v" : ""}"
     end
 
     def cmd(target)
