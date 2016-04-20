@@ -1,4 +1,4 @@
-module WatchifyRails
+module BrwyRails
   class Runner
     attr_accessor :config
 

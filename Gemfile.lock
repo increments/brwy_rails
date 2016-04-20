@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    watchify_rails (0.0.1)
+    brwy_rails (0.0.1)
       rails (~> 4.2.6)
 
 GEM
@@ -106,8 +106,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  brwy_rails!
   sqlite3
-  watchify_rails!
 
 BUNDLED WITH
    1.10.6
