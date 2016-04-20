@@ -2,7 +2,7 @@ module BrwyRails
   class Railtie < Rails::Engine
     # options
     config.brwy_rails = ActiveSupport::OrderedOptions.new
-    config.brwy_rails.browserify_opts = "-t babelify"
+    config.brwy_rails.browserify_opts = ""
     # TODO: Don't change tmpdir because it can't affect to asset.paths
     config.brwy_rails.tmpdir = "tmp/cache/brwy_rails"
     config.brwy_rails.targets = []
