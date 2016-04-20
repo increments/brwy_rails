@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = BrwyRails::VERSION
   s.authors     = ["Koutarou Chikuba"]
   s.email       = ["miz404@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of BrwyRails."
-  s.description = "TODO: Description of BrwyRails."
+  s.homepage    = "https://github.com/mischi"
+  s.summary     = "browserify/watchify on Rails"
+  s.description = "Use watchify on development and compile with browserify at release"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
