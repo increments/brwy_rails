@@ -17,6 +17,7 @@ config.assets.precompile = ["application.bundle.js", "application.css"]
 config.brwy_rails.targets = [
   "app/assets/javascripts/application.js"
 ]
+Rails.application.config.middleware.use BrwyRails.Middleware
 # config.brwy_rails.browserify_opts = "-t babelify" # your browserify compile command
 # config.brwy_rails.verbose = true
 # config.brwy_rails.target_suffix = ".bundle.js"
