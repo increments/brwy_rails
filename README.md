@@ -38,6 +38,8 @@ Rails.application.config.middleware.use BrwyRails.Middleware
 # config.brwy_rails.verbose = true
 # config.brwy_rails.target_suffix = ".bundle"
 # config.brwy_rails.watch = Rails.env.development?
+# config.brwy_rails.poll = false
+# config.brwy_rails.polling_interval = 1000
 ```
 
 Include javascript with `.bundle` suffix (configure it as `config.brwy_rails.target_suffix`)

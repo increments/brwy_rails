@@ -26,6 +26,10 @@ module BrwyRails
       @config.watch
     end
 
+    def polling?
+      @config.poll
+    end
+
     def run_with_watchify(target)
       ensure_output_dir!
       spawn watchify_cmd(target), chdir: Rails.root
@@ -41,7 +45,7 @@ module BrwyRails
     end
 
     def watchify_cmd(target)
-      "node_modules/.bin/watchify #{cmd target} #{verbose? ? "-v" : ""}"
+      "node_modules/.bin/watchify #{cmd target} #{verbose? ? "-v" : ""} #{polling? ? "--poll=#{@config.polling_interval}" : ""}"
     end
 
     def cmd(target)

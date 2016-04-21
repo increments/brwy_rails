@@ -15,6 +15,7 @@ module Dummy
     config.assets.js_compressor = nil
 
     # brwy_rails
+    config.brwy_rails.poll = true
     config.brwy_rails.targets = [
       "app/assets/javascripts/application.js"
     ]

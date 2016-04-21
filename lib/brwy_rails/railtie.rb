@@ -6,6 +6,8 @@ module BrwyRails
     config.brwy_rails.tmpdir = "tmp/cache/brwy_rails"
     config.brwy_rails.targets = []
     config.brwy_rails.verbose = true
+    config.brwy_rails.poll = false
+    config.brwy_rails.polling_interval = 1000
     config.brwy_rails.target_suffix = ".bundle"
     config.brwy_rails.watch = Rails.env.development?
 
