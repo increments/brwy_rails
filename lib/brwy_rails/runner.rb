@@ -37,7 +37,7 @@ module BrwyRails
 
     def run_with_browserify(target)
       ensure_output_dir!
-      exec browserify_cmd(target), chdir: Rails.root
+      system browserify_cmd(target), chdir: Rails.root
     end
 
     def browserify_cmd(target)
