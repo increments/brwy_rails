@@ -8,3 +8,4 @@ test/dummy/tmp/
 test/dummy/node_modules
 test/dummy/public/assets
 test/dummy/.sass-cache
+Gemfile.lock
